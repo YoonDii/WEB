@@ -12,6 +12,8 @@
 
 ![html5_logo_s](http://www.tcpschool.com/lectures/html5_logo_s.png): HTML5에 새롭게 추가된 태그
 
+
+
 | Tag                                                          | Description                                                  |
 | :----------------------------------------------------------- | :----------------------------------------------------------- |
 | [<!--...-->](https://www.w3schools.com/tags/tag_comment.asp) | 주석(comment)을 정의함.                                      |
