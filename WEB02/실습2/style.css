@@ -1,0 +1,55 @@
+/* 아래에 CSS를 작성해주세요. */
+.card {
+  width : 300px;
+  display: block;
+  margin: auto;
+}
+
+.card_image {
+  width : 300px;
+  border-radius: 0.5rem;
+  margin-right: 30px;
+  margin : 0 ;
+}
+.tilte{
+  width : 300px;
+}
+
+.b {
+  color: gray;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 15px;
+}
+
+.jell {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 5px;
+}
+
+.sale {
+  color: skyblue;
+  line-height: 1;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+.price {
+  line-height: 1;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+.review {
+  font-size: 14px;
+  line-height: 17px;
+  color: #424242;
+}
+
+.re_count {
+  font-size: 14px;
+  line-height: 17px;
+  color: darkgray;
+}
