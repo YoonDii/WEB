@@ -1,0 +1,38 @@
+/* 아래에 CSS를 작성해주세요. */
+.bespoke1 {
+  font-size: 12px;
+  display: block;
+}
+
+.bespoke2 {
+  text-align: center;
+}
+.card {
+  width : 900px;
+  display:flex;
+  margin-left: 40px;
+}
+.card_2 {
+  margin-right: 20px;
+  width : 300px;
+}
+.card_image {
+  width : 300px;
+  border-radius: 1rem;
+  margin-right: 30px;
+}
+
+.gray {
+  color : gray;
+  margin-top: 19px;
+  font-size: 12px;
+}
+
+.font {
+  font-size: 18.72px;
+  font: 1.2em; 
+  font-weight: 700;
+  margin-bottom: 19;
+  width: 300px;
+
+}
