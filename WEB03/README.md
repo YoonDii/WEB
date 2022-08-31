@@ -82,7 +82,7 @@
 #box4 { position: fixed; top: 20px; right: 30px; }
 ```
 
-![position](/Users/yoonji_kim/Desktop/WEB/WEB03/0831/position.png)
+![position](./0831/position.png)
 
 #### 1-1.absolute와 relative
 
@@ -108,7 +108,7 @@
 </html>
 ```
 
-![컨테이너](/Users/yoonji_kim/Desktop/WEB/WEB03/0831/컨테이너.png)
+![컨테이너](./0831/컨테이너.png)
 
 
 
@@ -130,7 +130,7 @@
 
 `float` 라는 단어는 원래 ‘뜨다’ 라는 의미이며, 원래 웹페이지에서 **이미지**를 어떻게 띄워서 텍스트와 함께 배치할 것인가에 대한 속성입니다.
 
-<img src="/Users/yoonji_kim/Desktop/WEB/WEB03/0831/float.gif" alt="float" style="zoom:100%;" />
+<img src="./0831/float.gif" alt="float" style="zoom:100%;" />
 
 - `inherit`: 부모 요소에서 상속
 - `left`: 왼쪽에 부유하는 블록 박스를 생성. 페이지 내용은 박스 오른쪽에 위치하며 위에서 아래로 흐름.
@@ -172,7 +172,7 @@
 </boby> 
 ```
 
-![float-left](/Users/yoonji_kim/Desktop/WEB/WEB03/0831/float-left.png)
+![float-left](./0831/float-left.png)
 
 -----------------------------------
 
@@ -193,7 +193,7 @@
 #### 3-1. flex-direction
 
 - Main axis 기준 방향 설정 
-- 역방향의 경우 HTML 태그 선언 순서와 시각적으로 다르니 유의 (웹 접근성에 영향)![flex-direction](/Users/yoonji_kim/Desktop/WEB/WEB03/0831/flex-direction.png)
+- 역방향의 경우 HTML 태그 선언 순서와 시각적으로 다르니 유의 (웹 접근성에 영향)![flex-direction](./0831/flex-direction.png)
 
 #### 3-2. flex-wrap
 
@@ -202,7 +202,7 @@
 - `nowrap` (기본 값) : 한 줄에 배치 
 - `wrap` : 넘치면 그 다음 줄로 배치
 
-<img src="/Users/yoonji_kim/Desktop/WEB/WEB03/0831/flex-wrap.png" alt="flex-wrap" style="zoom:45%;" />
+<img src="./0831/flex-wrap.png" alt="flex-wrap" style="zoom:45%;" />
 
 #### 3-3. flex-flow
 
@@ -216,7 +216,7 @@
 
 - Main axis를 기준으로 공간 배분
 
-![justify-content](/Users/yoonji_kim/Desktop/WEB/WEB03/0831/justify-content.png)
+![justify-content](./0831/justify-content.png)
 
 
 
@@ -236,7 +236,7 @@
 
 - 모든 아이템을 Cross axis를 기준으로 정렬
 
-![align-items](/Users/yoonji_kim/Desktop/WEB/WEB03/0831/align-items.png)
+![align-items](./0831/align-items.png)
 
 
 
@@ -245,7 +245,7 @@
 - 개별 아이템을 Cross axis 기준으로 정렬 
   - 주의! 해당 속성은 컨테이너에 적용하는 것이 아니라 개별 아이템에 적용
 
-![align-self](/Users/yoonji_kim/Desktop/WEB/WEB03/0831/align-self.png)
+![align-self](./0831/align-self.png)
 
 #### 3-8. align-items & align-self
 
