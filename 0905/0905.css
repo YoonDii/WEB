@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  min-width: 1280px;
+  color: #333333;
+}
+
+.logo {
+  color :black;
+  width: 2rem;
+}
+
+.bntt {
+  color: #6610f2;
+  border-color: #6610f2;
+  border-radius: 1.5rem;
+}
+
+.movie {
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.cd {
+  margin: 1rem;
+}
+.poster {
+  height: 40rem;
+  width: 30rem;
+  filter: drop-shadow(10px 6px 6px #c3c3c3);
+  padding: 2rem;
+}
+
