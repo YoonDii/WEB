@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  min-width: 1280px;
+  color: #333333;
+}
+
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-block: 1rem;
+  position: sticky;
+}
+
+.nav-list {
+ display: flex;
+
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #220905;
+}
+.nav-item {
+  margin: 0.5rem;
+}
+
+.banner {
+  min-width: 1280px;
+  height: 700px;
+  background-image: url("../assets/apparel.jpeg");
+  background-repeat:no-repeat;
+  background-size: cover;
+}
+.container-xl {
+  width: 1280px;
+  height: 700px;
+ }
+ .about {
+   display: flex;
+   flex-wrap: nowrap;
+   justify-content: space-around;
+   margin: 2rem;
+ }
+ .about_img {
+   border-radius: 2rem;
+   width: 500px;
+   height: 350px;
+   margin: 2rem;
+ }
+ .about_txt_dispaly {
+   text-align: center;
+   margin: 2rem;
+ }
+ .title {
+   font-size: 1.5rem;
+   line-height: 40px;
+   margin: 2rem;
+   text-align: center;
+ }
+ .about_txt {
+   font-size: 1.3rem;
+   line-height: 2rem;
+ }
+ 
+ .more {
+   margin: 2rem;
+ 
+ }
+ .more_title {
+   font-size: 2rem;
+   line-height: 40px;
+   margin: 2rem;
+   text-align: center;
+ }
+ .more_icon {
+   display: flex;
+   justify-content: space-around;
+ }
+ 
+ .mail_icon {
+   width: 50px;
+   height: 50px;
+   margin-left: 2rem;
+ }
+ .mail_txt{
+   text-align: center;
+   line-height: 2;
+ }
+ 
+ .phone_icon {
+   width: 50px;
+   height: 50px;
+   margin-left: 2rem;
+ }
+ .phone_txt {
+   text-align: center;
+   line-height: 2;
+ }
+ 
+ .map_icon {
+   width: 50px;
+   height: 50px;
+   margin-left: 2rem;
+ }
+ .map_txt {
+   text-align: center;
+   line-height: 2;
+ }
+ 
+ .clock_icon {
+   width: 50px;
+   height: 50px;
+   margin-left: 2rem;
+ }
+ .clock_txt {
+   text-align: center;
+   line-height: 2;
+ }
+ 
+ .arrow_icon {
+   position: fixed;
+   bottom: 20px;
+   width: 64px;
+   height: 64px;
+   right: 20px;
+ }
+
+ .t {
+  width: 1280px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.t-products {
+  margin: 5px;
+  border: 1px solid black;
+  float: left;
+  width: 400px;
+  height: 300px;
+}
+ .t_img {
+  width: 390px;
+  height: auto;
+  margin: 5px;
+}
+.t_title {
+  font-size: 1rem;
+  margin-top: 1rem;
+  text-align: center
+  
+}
+.txt {
+  padding: 15px;
+  text-align: center;
+  font-size: 0.5rem;
+}
