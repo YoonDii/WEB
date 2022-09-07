@@ -1,0 +1,30 @@
+
+.navv {
+  background-color: #7B68EE;
+}
+.bntt {
+  color: #E6E6FA;
+}
+.mtxt {
+  background-color: #E6E6FA;
+}
+
+.cardd{
+  color: #D8BFD8;
+}
+
+.card_bg1 {
+  background-image: url(./33.jpeg);
+  background-repeat: no-repeat ;
+  background-size: cover;
+}
+.card_bg2 {
+  background-image: url(./32.jpeg);
+  background-repeat: no-repeat ;
+  background-size: cover;
+}
+.card_bg3 {
+  background-image: url(./23.jpeg);
+  background-repeat: no-repeat ;
+  background-size: cover;
+}
