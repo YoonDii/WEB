@@ -14,17 +14,17 @@
 }
 
 .card_bg1 {
-  background-image: url(./33.jpeg);
+  background-image: url(./img/33.jpeg);
   background-repeat: no-repeat ;
   background-size: cover;
 }
 .card_bg2 {
-  background-image: url(./32.jpeg);
+  background-image: url(./img/32.jpeg);
   background-repeat: no-repeat ;
   background-size: cover;
 }
 .card_bg3 {
-  background-image: url(./23.jpeg);
+  background-image: url(./img/23.jpeg);
   background-repeat: no-repeat ;
   background-size: cover;
 }
