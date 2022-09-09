@@ -1,0 +1,27 @@
+.nav {
+  background-color: rgb(95, 83, 75);
+}
+a:hover{
+  background-color: rgb(222, 183, 138);
+}
+.totoro {
+  width: 800px;
+}
+.hbg {
+ background-color: rgb(118, 150, 163);
+}
+.secbg {
+ background-color: rgb(222, 183, 138);
+}
+.btnn {
+  color: rgb(228, 181, 69);
+}
+.foot {
+  background-color: rgb(167, 62, 60);
+}
+.vid {
+  width: 1200px;
+  height: 400px;
+  padding-left: 15rem;
+  padding-right: 15rem;
+}
