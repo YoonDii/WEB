@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sunflower&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="0914.css" />
+    <title>보스베이비</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./images (1)/icons8-icq-32.png"
+    />
+  </head>
+  <body>
+    <!-- 네비 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./images (1)/logo.png" width="90" height="60" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="./index.html"
+              >
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./03_community.html">Community</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                href="#"
+              >
+                Login
+              </a>
+              <!-- 모달 -->
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">
+                        Login
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="mb-3">
+                        <label
+                          for="exampleFormControlInput1"
+                          class="form-label"
+                        >
+                          Email address
+                        </label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="exampleFormControlInput1"
+                          aria-describedby="emaildHelpBlock"
+                        />
+                        <div id="emailHelpBlock" class="form-text">
+                          We'll never share your email with anyone else.
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <label
+                          for="exampleFormControlTextarea1"
+                          class="form-label"
+                        >
+                          Password
+                        </label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="exampleFormControlTextarea1"
+                        />
+                      </div>
+                      <div class="mb-3 form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="exampleCheck1"
+                        />
+                        <label class="form-check-label" for="exampleCheck1">
+                          Check me out
+                        </label>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-outline-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button type="button" class="btn btn-secondary">
+                        Save changes
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- 영화 정보 -->
+    <div class="container px-3 px-lg-4">
+      <div class="row gx-4 gx-lg-5 align-items-center my-5 py-5">
+        <div class="col-lg-4">
+          <img
+            class="img-fluid rounded mb-4 mb-lg-0"
+            src="./images (1)/보스베이비.jpeg"
+          />
+        </div>
+        <div class="col-lg-8">
+          <h1 class="display-5 fw-bold m-0 py-1">보스 베이비</h1>
+          <p class="fs-5 mb-3 py-1">The Boss Baby, 2017</p>
+          <div class="d-flex">
+            <div class="px-2 fw-bold">
+              <p>개봉</p>
+              <p>장르</p>
+              <p>국가</p>
+              <p>등급</p>
+              <p>러닝타임</p>
+            </div>
+            <div class="ps-2 pe-4">
+              <p>2017.05.03</p>
+              <p>애니메이션/코미디/가족</p>
+              <p>미국</p>
+              <p>전체관람가</p>
+              <p>97분</p>
+            </div>
+            <div class="ps-4 pe-2fw-bold">
+              <p>평점</p>
+              <p>누적관객</p>
+            </div>
+            <div class="px-2">
+              <p>
+                <i class="bi bi-star-fill text-warning"></i>
+                7.6
+              </p>
+              <p>2,452,245명</p>
+            </div>
+          </div>
+          <div class="detail_btn my-2">
+            <div class="group_btn">
+              <a
+                href="https://www.tving.com/movie/player/M000332033?utm_source=Daum&amp;utm_medium=Organic&amp;utm_campaign=SERP"
+                target="_blank"
+                class="btn btn-light mx-2"
+              >
+                <i class="bi bi-caret-right-square text-danger"></i>
+                티빙
+              </a>
+              <a
+                href="https://www.wavve.com/player/movie?movieid=MV_CA01_DY0000011238"
+                target="_blank"
+                class="btn btn-light"
+              >
+                <i class="bi bi-caret-right-square text-primary"></i>
+                웨이브
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 줄거리 -->
+    <section class="container my-5">
+      <h3>
+        줄거리
+      </h3>
+      <hr />
+      <b>
+        시크한 눈빛, 쫙 빠진 수트핏 귀여운 얼굴 뒤 숨겨진 반전포스 세상에 없던
+        베이비가 온다!
+      </b>
+      <br />
+      <br />
+      어느 날 굴러들어온 아기 동생에게 엄빠의 사랑을 모두 빼앗겨 버린 ‘팀’.
+      평소엔 앙증맞은 베이비, 알고 보니 ‘베이비 주식회사’의 카리스마 보스. ‘보스
+      베이비’는 비밀 임무를 수행하기 위해 파견근무 중! 팀은 엄빠의 사랑을 되찾기
+      위해 보스 베이비는 라이벌 ‘퍼피 주식회사’를 무찌르기 위해 원치 않는 공조를
+      시작한다
+      <br />
+      <br />
+      <b>7살 빅 브라더 vs 7개월 베이비 브라더 그들의 살벌한 팀플이 시작된다!</b>
+    </section>
+    <!-- 예고편 -->
+    <section class="container my-5">
+      <h3>
+        예고편
+      </h3>
+      <hr />
+      <div class="d-flex justify-content-center">
+        <iframe
+          width="1120"
+          height="630"
+          src="https://www.youtube.com/embed/t-TBvBKi1kA"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+    <!-- 출연진 -->
+    <section class="container my-5">
+      <h3>
+        출연진
+        <a
+          href="https://movie.daum.net/moviedb/crew?movieId=107497"
+          target="_blank"
+          class="btn btn-outline-dark rounded-pill mx-2"
+        >
+          더보기
+          <i class="bi bi-chevron-compact-right"></i>
+        </a>
+      </h3>
+      <hr />
+      <div class="d-flex justify-content-evenly">
+        <div style="width: 8rem;">
+          <img
+            src="./images (1)/보스감독.png"
+            class="card-img-top rounded-4 mb-2"
+          />
+          <div class="m-2">
+            <strong>
+              톰 맥그래스
+            </strong>
+            <span class="text-secondary">
+              <br />
+              감독
+            </span>
+          </div>
+        </div>
+        <div style="width: 8rem;">
+          <img
+            src="./images (1)/보스주연1.png"
+            class="card-img-top rounded-4 mb-2"
+          />
+          <div class="m-2">
+            <strong>
+              알렉 볼드윈
+            </strong>
+            <span class="text-secondary">
+              <br />
+              주연
+            </span>
+          </div>
+        </div>
+        <div style="width: 8rem;">
+          <img
+            src="./images (1)/보스주연2.png"
+            class="card-img-top rounded-4 mb-2"
+          />
+          <div class="m-2">
+            <strong>
+              토니 맥과이어
+            </strong>
+            <span class="text-secondary">
+              <br />
+              주연
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 푸터 -->
+    <footer>
+      <p class="text-center py-4">Web-bootstrap PJT,by CMA KYJ</p>
+    </footer>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
