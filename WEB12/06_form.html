@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>220919.04</title>
+  </head>
+  <body>
+    <form action="">
+      <input
+        type="password"
+        name="password"
+        id="password"
+        onchange="check_pw()"
+      />
+      <input
+        type="password"
+        name="password_confirmation"
+        id="password_confirmation"
+        onchange="check_pw()"
+      />
+      <input type="submit" />
+    </form>
+
+    <script>
+      function check_pw() {
+        var pw = document.getElementById('password').value
+        var SC = ['!', '@', '#', '$', '%']
+        var check_SC = 0
+
+        if (pw.length < 8 || pw.length > 16) {
+          window.alert('비밀번호는 8글자 이상, 16글자 이하만 이용 가능합니다.')
+          document.getElementById('password').value = ''
+        }
+        for (var i = 0; i < SC.length; i++) {
+          if (pw.indexOf(SC[i]) != -1) {
+            check_SC = 1
+          }
+        }
+        if (check_SC == 0) {
+          alert('!,@,#,$,% 의 특수문자가 들어가 있지 않습니다.')
+          document.getElementById('password').value = ''
+        }
+        if (
+          document.getElementById('password').value != '' &&
+          document.getElementById('password_confirmation').value != ''
+        ) {
+          if (
+            document.getElementById('password').value ==
+            document.getElementById('password_confirmation').value
+          ) {
+            document.getElementById('check').innerHTML =
+              '비밀번호가 일치합니다.'
+            document.getElementById('check').style.color = 'blue'
+          } else {
+            document.getElementById('check').innerHTML =
+              '비밀번호가 일치하지 않습니다.'
+            document.getElementById('check').style.color = 'red'
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
