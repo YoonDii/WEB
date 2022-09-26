@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="text-center p-4">NCT 멤버 이름</h1>
+<div class="text-center p-4">
+  {% for i in words %} {% for j in i %} {{j}} {% endfor %}
+  <hr />
+  {% endfor %} {% endblock %}
+</div>
