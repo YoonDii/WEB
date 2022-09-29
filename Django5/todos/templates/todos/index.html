@@ -41,23 +41,33 @@
     </tr>
   </thead>
   <tbody>
+    <!-- 테이블 & 완료시 밑줄긋기 -->
     {%for todo in todos%}
+    {%if todo.completed == False%}
     <tr>
       <th scope="row">{{todo.priority}}</th>
       <td><a href="{% url 'todos:detail' todo.pk %}">{{todo.content}}</a> </td>
       <td>{{todo.created_at}}</td>
       <td>{{todo.deadline}}</td>
-      <td>
-        {% if todo.completed == False %}
-        <span class="align-middle">미완료</span>
-        {% else %}
-        <span class="align-middle text-success fw-bolder h5">완료</span>
-        {% endif %}
-    </td>
+      <td><span class="align-middle">미완료</span></td>
       <form action="{%url 'todos:completed' todo.pk%}"><td><button type="submit" class="btn btn-outline-success">이걸해냄</button></td></form>
       <td><a class="btn btn-outline-primary" href="{%url 'todos:edit' todo.pk%}">수정</a></td>
       <td><a class="btn btn-outline-danger" href="{%url 'todos:delete' todo.pk%}">삭제</a></td>
     </tr>
+    {%else%}
+    
+      <tr>
+        <th scope="row"><del>{{todo.priority}}</del></th>
+        <td><a href="{% url 'todos:detail' todo.pk %}"><del>{{todo.content}}</del></a> </td>
+        <td><s>{{todo.created_at}}</s></td>
+        <td><s>{{todo.deadline}}</s></td>
+        <td><span class="align-middle text-success fw-bolder h5">완료</span></td>
+        <form action="{%url 'todos:completed' todo.pk%}"><td><button type="submit" class="btn btn-outline-success">이걸해냄</button></td></form>
+        <td><a class="btn btn-outline-primary" href="{%url 'todos:edit' todo.pk%}">수정</a></td>
+        <td><a class="btn btn-outline-danger" href="{%url 'todos:delete' todo.pk%}">삭제</a></td>
+      </tr>
+    
+    {%endif%}
     {%endfor%}
   </tbody>
 </table></div>
