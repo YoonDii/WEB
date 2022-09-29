@@ -1,27 +1,66 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>index.html</h1>
-    <form action="{%url 'todos:create'%}">
-      할 일<input type="text" name="content___" maxlenght="80">
-      <br> 우선순위<input type="text" name="content___" maxlenght="80">
-      <br> 마감기한<input type="text" name="content___" maxlenght="80">
-      <input type="submit" value="할일 추가">
-    </input>
-    </form>
-    <hr>
+{% extends 'base.html' %}
+{% block content %}
+<!-- 해더 -->
+  <div class="p-4">
+  <h1 class="text-center">오늘의 할일은 오늘 최대한 끝내자!</h1><div class="text-center">... 하지만 내일의 내가 해도 나쁘진 않지,,</div></div>
+  <!-- 할일인풋 -->
+  <div class="p-3">
+  <form action="{%url 'todos:create'%}">
+    <label class="input-group-text m-2" for="inputGroup-text"> 해내고만다
+    <input class="form-control mx-2" type="text" name="content" maxlenght="80"></label>
+    <!-- 우선순위 -->
+    <label class="input-group-text m-2" for="inputGroup-text"> 우선 순위
+      <select class="form-select mx-2" name="priority" >
+      <option value="">뭐가 더 급해</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select></label>
+    <!-- 마감기한 날짜로 받기 -->
+    <label class="input-group-text m-2" for="inputGroup-text">
+    마감 기한
+    <input  class="mx-2" type="date" name="deadline"></label>
+    <div class="d-grid gap-2"><input class="btn btn-dark m-2" type="submit" value="할일 추가"></div>
+  </input>
+</form></div>
+<!-- 받은 인풋값 테이블로 나타내기 -->
+<div class="p-3">
+<table class="table text-center" >
+  <thead>
+    <tr>
+      <th scope="col">우선순위</th>
+      <th scope="col">할 일</th>
+      <th scope="col">생성날짜</th>
+      <th scope="col">마감기한</th>
+      <th scope="col">진행 상태</th>
+      <th scope="col">변경</th>
+      <th scope="col">수정</th>
+      <th scope="col">삭제</th>
+    </tr>
+  </thead>
+  <tbody>
     {%for todo in todos%}
-    <li>{{todo.id}}-{{todo.content}}-{{todo.completed}}
-      <a href="{%url 'todos:delete' todo.pk%}">삭제</a>
-    </li>
+    <tr>
+      <th scope="row">{{todo.priority}}</th>
+      <td><a href="{% url 'todos:detail' todo.pk %}">{{todo.content}}</a> </td>
+      <td>{{todo.created_at}}</td>
+      <td>{{todo.deadline}}</td>
+      <td>
+        {% if todo.completed == False %}
+        <span class="align-middle">미완료</span>
+        {% else %}
+        <span class="align-middle text-success fw-bolder h5">완료</span>
+        {% endif %}
+    </td>
+      <form action="{%url 'todos:completed' todo.pk%}"><td><button type="submit" class="btn btn-outline-success">이걸해냄</button></td></form>
+      <td><a class="btn btn-outline-primary" href="{%url 'todos:edit' todo.pk%}">수정</a></td>
+      <td><a class="btn btn-outline-danger" href="{%url 'todos:delete' todo.pk%}">삭제</a></td>
+    </tr>
     {%endfor%}
- 
-  </body>
-</html>
+  </tbody>
+</table></div>
+
+{% endblock%}
  

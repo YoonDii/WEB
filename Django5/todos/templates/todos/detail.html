@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1 class="text-center p-4">해내야지</h1>
+
+<div class="container">
+  <div class="card card-primary border-dark m-3">
+    <div class="card-header bg-transparent border-dark">
+      <h5 class="card-title text-dark fw-bold text-align-center">할 일</h5>
+    </div>
+    <div class="card-body">
+      <h3>{{ todo.content }}</h3>
+    </div>
+  </div>
+  <div class="card border-dark m-3">
+    <div class="card-header bg-transparent border-dark">
+      <h5 class="card-title text-dark fw-bold">우선 순위</h5>
+    </div>
+    <div class="card-body">
+      <h3>{{ todo.priority }}</h3>
+    </div>
+  </div>
+  <div class="card border-dark m-3">
+    <div class="card-header bg-transparent border-dark">
+      <h5 class="card-title text-dark fw-bold">마감 기한</h5>
+    </div>
+    <div class="card-body">
+      <h3>{{ todo.deadline }}</h3>
+    </div>
+  </div>
+  <div class="card border-dark m-3">
+    <div class="card-header bg-transparent border-dark">
+      <h5 class="card-title text-dark fw-bold">진행 상태</h5>
+    </div>
+    <div class="card-body">
+      {% if todo.completed == False %}
+      <h3>미완료</h3>
+      {% else %}
+      <h3>완료</h3>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<!-- 돌아가기 버튼 -->
+<div class="container text-center">
+  <a type="button" class="btn btn-dark px-5" href="{% url 'todos:index' %}">
+    <span class="fw-bold">BACK</span>
+  </a>
+</div>
+{% endblock %}
