@@ -1,0 +1,4 @@
+<h1>{{ ppap.pk }}번 게시글</h1>
+<p>{{ ppap.created_at }} | {{ ppap.updated_at }}</p>
+<p>{{ ppap.content }}</p>
+<a href="{% url 'ppap:update' ppap.pk %}">수정하기</a>

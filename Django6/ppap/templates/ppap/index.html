@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1>게시판</h1>
+    <a href="{% url 'ppap:create' %}">글 쓰기</a>
+    {% for ppap in ppaps %}
+    <h3><a href="{% url 'ppap:detail' ppap.pk %}">{{ ppap.title }}</a></h3>
+    <p>{{ ppap.created_at }} | {{ ppap.updated_at }}</p>
+    <hr />
+    {% endfor %}
+  </body>
+</html>
