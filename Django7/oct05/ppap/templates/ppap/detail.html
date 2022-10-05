@@ -1,0 +1,15 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="text-center p-5">게시판</h1>
+<div class="m-5 p-3 border border-3 border-dark rounded">
+  <h3>제목 : {{ppap.title}}</h3>
+  <h5>내용 : {{ppap.content}}</h5>
+  <p>만든날짜 : {{ppap.created_at}} | 수정날짜 : {{ppap.updated_at}}</p>
+  <a class="btn btn-outline-dark" href="{%url 'ppap:delete' ppap.pk%}">
+    삭제
+  </a>
+  <a class="btn btn-outline-dark" href="{%url 'ppap:update' ppap.pk%}">
+    수정
+  </a>
+</div>
+
+{% endblock %}
