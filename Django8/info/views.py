@@ -1,7 +1,7 @@
-from distutils.log import info
 from django.shortcuts import render, redirect
 from .form import InfoForm
 from .models import Info
+from django.db.models import Q
 
 # Create your views here.
 
@@ -65,3 +65,22 @@ def update(request, pk):
         info_form = InfoForm(instance=info)
     context = {"info_form": info_form, "info": info}
     return render(request, "info/update.html", context)
+
+
+# def search(request):
+#     all_date = Info.objects.all()
+#     search = request.GET.get("search", "")
+
+#     if search:
+#         aa = all_date.filter(title__icontains=search)
+
+#     bb = {"aa": aa}
+
+#     return render(request, "info/search.html", bb)
+def search(request):
+    if request.method == "GET":
+        search = request.GET.get("search", "")
+        reviews = Info.objects.filter(title__icontains=search)
+        context = {"aa": reviews}
+
+    return render(request, "info/search.html", context)

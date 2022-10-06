@@ -43,8 +43,11 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'info:create' %}">추가</a>
           </li>
-          
         </ul>
+        <form class="d-flex" Form method="GET" role="search" action="{% url 'info:search' %}">
+          <input name='search'class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-dark" type="submit">Search</button>
+        </form>
       </div>
     </div>
   </nav>
