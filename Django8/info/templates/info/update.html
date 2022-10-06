@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{%block content%}
+  <form action="{% url 'info:update' info.pk%}" method="POST">
+    {% csrf_token %}
+    <label for="title">제목 :
+      {{info.title}}</label>
+    <input type="text" name="title" id="title"/>
+    <label for="summary">내용 :
+      {{info.summary}}</label>
+    <textarea name="summary" id="summary" cols="30" rows="10"></textarea>
+    <label for="상영시간">상영시간:
+      {{info.running_time}}</label>
+    <input type="text" name="running_time" id="running_time">
+    <input type="submit" value="글쓰기"/>
+  </form>
+
+{%endblock %}

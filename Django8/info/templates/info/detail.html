@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1 class="text-center p-5">게시판</h1>
+  <div class="m-5 p-3 border border-3 border-dark rounded">
+    <h3>제목 :
+      {{info.title}}</h3>
+    <h5>내용 :
+      {{info.summary}}</h5>
+    <p>상영시간 :
+      {{info.running_time}}
+    </p>
+    <a class="btn btn-outline-dark" href="{%url 'info:delete' info.pk%}">
+      삭제
+    </a>
+    <a class="btn btn-outline-dark" href="{%url 'info:update' info.pk%}">
+      수정
+    </a>
+  </div>
+
+{% endblock %}
