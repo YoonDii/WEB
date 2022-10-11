@@ -1,13 +1,14 @@
-{%extends 'base.html'%}{%block content%} {% load django_bootstrap5 %}
-{%bootstrap_css %} {% bootstrap_javascript %}
-<h1 class="text-center p-5">작성하기</h1>
-<form action="{% url 'ppap:create' %}" method="POST">
-  {% csrf_token %} {% bootstrap_form ppap_form %}
-  <!-- <label for="title">제목 : {{ppap.title}}</label>
-  <input type="text" name="title" id="title" />
-  <label for="content">내용 : {{ppap.content}}</label>
-  <textarea name="content" id="content" cols="30" rows="10"></textarea> -->
-  <input class="btn btn-outline-dark" type="submit" value="글쓰기" />
-</form>
+{%extends 'base.html'%}
+{%block content%}
+  {% load django_bootstrap5 %}
+  {%bootstrap_css %}
+  {% bootstrap_javascript %}
+  <h1 class="text-center p-5">작성하기</h1>
+  <form action="{% url 'ppap:create' %}" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form ppap_form %}
+    <!-- <label for="title">제목 : {{ppap.title}}</label> <input type="text" name="title" id="title" /> <label for="content">내용 : {{ppap.content}}</label> <textarea name="content" id="content" cols="30" rows="10"></textarea> -->
+    <input class="btn btn-outline-dark" type="submit" value="글쓰기"/>
+  </form>
 
 {%endblock %}

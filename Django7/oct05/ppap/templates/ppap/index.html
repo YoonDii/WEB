@@ -1,19 +1,26 @@
-{% extends 'base.html' %} {% block content %}{%load static%}
-<h1 class="text-center p-5">게시판</h1>
-<img class="container-fluid h-50 w-50" src="{% static '001.jpeg'%}" alt="" />
-<div class="text-center m-3">
-  <a href="{% url 'ppap:create' %}" type="button" class="btn btn-outline-dark">
-    글 쓰기
-  </a>
-</div>
-<hr />
+{% extends 'base.html' %}
+{% block content %}{%load static%}
+  <h1 class="text-center p-5">게시판</h1>
+  <img class="container-fluid" src="{% static 'hedgehog_animal_cute_small_porcupine_autumn_icon_150807.png'%}" alt=""/>
+  <div class="text-center m-3">
+    <a href="{% url 'ppap:create' %}" type="button" class="btn btn-outline-dark">
+      글 쓰기
+    </a>
+  </div>
+  <hr/>
 
-{% for ppap in ppaps %}
-<div class="m-5 p-3 border border-3 border-dark rounded">
-  <a class="text-decoration-none" href="{%url 'ppap:detail' ppap.pk%}">
-    <h3>제목 : {{ppap.title}}</h3>
-  </a>
-  <h5>내용 : {{ppap.content}}</h5>
-  <p>만든날짜 : {{ppap.created_at}} | 수정날짜 : {{ppap.updated_at}}</p>
-</div>
-{% endfor%} {% endblock %}
+  {% for ppap in ppaps %}
+    <div class="m-5 p-3 border border-3 border-dark rounded">
+      <a class="text-decoration-none" href="{%url 'ppap:detail' ppap.pk%}">
+        <h3>제목 :
+          {{ppap.title}}</h3>
+      </a>
+      <h5>내용 :
+        {{ppap.content}}</h5>
+      <p>만든날짜 :
+        {{ppap.created_at}}
+        | 수정날짜 :
+        {{ppap.updated_at}}</p>
+    </div>
+    {% endfor%}
+  {% endblock %}
