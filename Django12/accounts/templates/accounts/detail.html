@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="m-5 p-3 border border-3 border-secondary rounded">
+    <h1>{{ user.username }}의 페이지</h1>
+    <h5>{{ user.email }}</h5>
+
+    <a type="button" class="btn btn-secondary" href="{% url 'accounts:change_password' %}">비밀번호 수정</a>
+    <a type="button" class="btn btn-secondary" href="{% url 'accounts:update' %}">회원정보 수정</a>
+  </div>
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block content %}
+  <div class="content m-3">
+    <h1 class="text-center">업데이트</h1>
+
+    <form action="" method="POST">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <button type='submit' class="btn btn-secondary">업데이트</button>
+    </form>
+  </div>
+{% endblock %}

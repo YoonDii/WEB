@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+  {% load django_bootstrap5 %}
+  <div class="m-5 p-3 border border-3 border-secondary rounded">
+    <h3>제목 :
+      {{i.title}}</h3>
+    <h5>내용 :
+      {{i.content}}</h5>
+    {% if i.user.pk == request.user.pk %}
+      <a href="{% url 'articles:delete' i.pk %}" type="button" class="btn btn-outline-secondary">삭제</a>
+      <a href="{% url 'articles:update' i.pk %}" type="button" class="btn btn-outline-secondary">수정</a>
+    {% endif %}
+    <div class="m-2">
+      {% if comments %}
+        <p>
+          <b>{{ comments|length }}개의 댓글이 있습니다.</b>
+        </p>
+      {% endif %}
+      <form action="{% url 'articles:comment_create' i.pk %}" method="POST">
+        {% csrf_token %}
+        {% bootstrap_form comment_form layout='inline'%}
+        <input type="submit" class="m-2 btn btn-outline-secondary" value="등록">
+      </form>
+    </div>
+    <hr>
+    <div class="m-2 p-2 border border-3 border-secondary rounded">
+      <h4 class="my-3">댓글</h4>
+      {% for comment in comments %}
+        <p>{{ comment.content }}</p>
+        <form action="{% url 'articles:comments_delete' i.pk comment.pk%}" method="POST">
+          {% csrf_token %}
+          <input type="submit" class="m-2 btn btn-outline-secondary" value="삭제">
+          <form action="{% url 'articles:comments_update' i.pk comment.pk%}" method="POST">
+            <input type="submit" class="m-2 btn btn-outline-secondary" value="수정">
+            <hr>
+          {% endfor %}
+
+        </div>
+      {% endblock %}

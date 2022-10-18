@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+  <form action="{% url 'articles:update' ppap.pk %}" method="POST">
+    {% csrf_token %}
+    {{ ppap_form.as_table }}
+    <input type="submit" class="m-2 btn btn-outline-secondary" value="등록">
+  </form>
+{% endblock %}
