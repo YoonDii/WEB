@@ -69,16 +69,16 @@ def update(request):
     return render(request, "accounts/update.html", context)
 
 
-@require_POST
 def follow(request, pk):
     if request.user.is_authenticated:
-        user = get_user_model()
-        person = user.objects.get(pk=pk)
-        if person != request.user:
-            if person.followers.filter(pk=request.user.pk).exists():
-                # if request.user in person.followers.all():
-                person.followers.remove(request.user)
-            else:
-                person.followers.add(request.user)
-        return redirect("accounts:detail", person.username)
-    return redirect("accounts:login")
+        person = get_object_or_404(get_user_model(), pk=pk)
+        if person == request.user:
+            messages.warning(request, "스스로 팔로우를 할 수 없습니다.")
+            return redirect("accounts:detail", pk)
+            # if request.user.followings.filter(pk=user_pk).exists():
+        if person.followers.filter(pk=request.user.pk).exists():
+            person.followers.remove(request.user)
+        else:
+            person.followers.add(request.user)
+
+    return redirect("articles:detail", pk)
