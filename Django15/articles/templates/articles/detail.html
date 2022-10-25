@@ -5,7 +5,19 @@
 <h1>{{ article.title }}</h1>
 <p>{{ article.pk }}번 게시글 | <a href="{% url 'accounts:detail' article.user.pk %}">{{ article.user.username }}</a></p>
 <p>{{ article.created_at|date:"SHORT_DATETIME_FORMAT" }} | {{ article.updated_at|date:"y-m-d D" }}</p>
+<p>FOLLOWING   {{ user.followings.count }} | FOLLOWER  {{ user.followers.count }}</p>
+{% if request.user != user %}
+  <form href="{% url 'accounts:follow' user.pk %}" method='POST'>
+    {% csrf_token %}
+    {% if request.user in user.followers.all %}
+    <input type="button" class="bnt bnt-outline-dark" value="UNFOLLOW">
+    {% else %}
+    <input type="button" class="bnt bnt-outline-dark" value="FOLLOWING">  
+    {% endif %}
+  </form>
+{% endif %}
 <span>
+
 {% if request.user.is_authenticated %}
   <a class="like-heart" href="{% url 'articles:like' article.pk %}">
   {% if request.user in article.like_users.all %}
