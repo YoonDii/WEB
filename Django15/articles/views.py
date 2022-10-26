@@ -1,10 +1,10 @@
 from xml.etree.ElementTree import Comment
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import Article
 from .forms import ArticleForm, CommentForm
-
+from django.http import JsonResponse
 # Create your views here.
 
 # 요청 정보를 받아서..
@@ -84,22 +84,34 @@ def update(request, pk):
 
 @login_required
 def comment_create(request, pk):
-    article = Article.objects.get(pk=pk)
+    print(request.POST)
+    article = get_object_or_404(Article, pk=pk)
     comment_form = CommentForm(request.POST)
     if comment_form.is_valid():
         comment = comment_form.save(commit=False)
         comment.article = article
         comment.user = request.user
         comment.save()
-    return redirect("articles:detail", article.pk)
+        context = {
+            'content': comment.content,
+            'userName': comment.user.username
+        }
+        return JsonResponse(context)
 
 
 @login_required
 def like(request, pk):
-    article = Article.objects.get(pk=pk)
-    if article.like_users.filter(pk=request.user.pk).exists():
-        # if request.user in article.like_users.all():
+    article = get_object_or_404(Article, pk=pk)
+    # 만약에 로그인한 유저가 이 글을 좋아요를 눌렀다면,
+    # if article.like_users.filter(id=request.user.id).exists():
+    if request.user in article.like_users.all(): 
+        # 좋아요 삭제하고
         article.like_users.remove(request.user)
+        is_liked = False
     else:
+        # 좋아요 추가하고 
         article.like_users.add(request.user)
-    return redirect("articles:index")
+        is_liked = True
+    # 상세 페이지로 redirect
+    context = {'isLiked': is_liked, 'likeCount': article.like_users.count()}
+    return JsonResponse(context)
