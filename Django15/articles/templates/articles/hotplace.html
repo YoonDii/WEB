@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load django_bootstrap5 %}
+{% block body %} 
+<div class="container">
+  <div class="container mt-5">
+    <div class="text-center">
+      <h1 class="menu-title mb-5">{{ admin.name }}</h1>
+    </div>
+    <div class="row gx-3">
+      <div class="col-7 d-flex justify-content-center">
+        <div class="detail-img-div">
+          <img class="detail-img" src="{{ admin.image.url }}">
+        </div>
+      </div>
+      <div class="col-5 mb-5">
+        <table class="table">
+          <tbody>
+            <!-- 주소 -->
+            <tr>
+              <th class="col-3">주소</th>
+              <td class="col-9">{{ admin.address }}</td>
+            </tr>
+            <!-- 업체 연락처 -->
+            <tr>
+              <th class="col-3">문의처</th>
+              <td class="col-9">{{ admin.contact }}</td>
+            </tr>
+            <!-- 캠핑장 유형 -->
+            <tr>
+              <th class="col-3">캠핑장 유형</th>
+              <td class="col-9">{{ admin.camp_type }}</td>
+            </tr>
+            <!-- 바닥 유형 -->
+            <tr>
+              <th class="col-3">바닥 유형</th>
+              <td class="col-9">{{ admin.geography }}</td>
+            </tr>
+            <!-- 이용 시간 -->
+            <tr>
+              <th class="col-3">이용 시간</th>
+              <td class="col-9">{{ admin.season }}</td>
+            </tr>
+            <!-- 이용요금 -->
+            <tr>
+              <th class="col-3">이용 요금</th>
+              <td class="col-9">{{ admin.active_day }}</td>
+            </tr>
+            <!-- 홈페이지 -->
+            <tr>
+              <th class="col-3">홈페이지</th>
+              <td class="col-9"><a href="{{ admin.homepage }}">홈페이지 바로가기</a></td>
+            </tr>
+            <!-- 예약 방법 -->
+            <tr>
+              <th class="col-3">예약 방법</th>
+              <td class="col-9">{{ admin.reservation }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <a href="{% url 'accounts:marker' article.pk %}" class="btn btn-dark rounded-pill col-3 mt-3">
+          {% if article not in request.user.marker.all %}
+          <i class="bi bi-bookmark-star"></i>
+          즐겨찾기
+          {%else%}
+          <i class="bi bi-bookmark-star-fill"></i>
+          즐겨찾기 해제
+          {%endif%}
+        </a>
+        {% comment %} <a class="btn btn-dark rounded-pill col-4 mt-3 mx-3" href="{% url 'reviews:create' article.pk %}"> 리뷰 작성하기</a> {% endcomment %}
+        {% if user.is_superuser %}
+        <a class="btn btn-dark rounded-pill col-3 mt-3 mx-5" href="{url 'articles:delete' article.pk}">삭제하기</a>
+        {% endif %}
+{% endblock %}

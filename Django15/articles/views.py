@@ -1,18 +1,22 @@
-from xml.etree.ElementTree import Comment
-from django.shortcuts import render, redirect,get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .models import Article
-from .forms import ArticleForm, CommentForm
+from .models import Article, Admin
+from .forms import ArticleForm, CommentForm, AdminForm
 from django.http import JsonResponse
+
 # Create your views here.
 
 # 요청 정보를 받아서..
 def index(request):
     # 게시글을 가져와서..
     articles = Article.objects.order_by("-pk")
+    all_article = Admin.objects.all()
     # Template에 전달한다.
-    context = {"articles": articles}
+    context = {
+        "articles": articles,
+        "all_article": all_article,
+    }
     return render(request, "articles/index.html", context)
 
 
@@ -92,10 +96,7 @@ def comment_create(request, pk):
         comment.article = article
         comment.user = request.user
         comment.save()
-        context = {
-            'content': comment.content,
-            'userName': comment.user.username
-        }
+        context = {"content": comment.content, "userName": comment.user.username}
         return JsonResponse(context)
 
 
@@ -104,14 +105,40 @@ def like(request, pk):
     article = get_object_or_404(Article, pk=pk)
     # 만약에 로그인한 유저가 이 글을 좋아요를 눌렀다면,
     # if article.like_users.filter(id=request.user.id).exists():
-    if request.user in article.like_users.all(): 
+    if request.user in article.like_users.all():
         # 좋아요 삭제하고
         article.like_users.remove(request.user)
         is_liked = False
     else:
-        # 좋아요 추가하고 
+        # 좋아요 추가하고
         article.like_users.add(request.user)
         is_liked = True
     # 상세 페이지로 redirect
-    context = {'isLiked': is_liked, 'likeCount': article.like_users.count()}
+    context = {"isLiked": is_liked, "likeCount": article.like_users.count()}
     return JsonResponse(context)
+
+
+def admin_create(request):
+    if request.method == "POST":
+        form = AdminForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect("articles:index")
+    else:
+        form = AdminForm()
+    context = {
+        "form": form,
+    }
+    return render(request, "articles/admin_create.html", context)
+
+
+def hotplace(request, hot_pk):
+    # 특정 글을 가져온다.
+    admin = Admin.objects.get(pk=hot_pk)
+    comment_form = CommentForm()
+    # template에 객체 전달
+    context = {
+        "admin": admin,
+        "comment_form": comment_form,
+    }
+    return render(request, "articles/hotplace.html", context)

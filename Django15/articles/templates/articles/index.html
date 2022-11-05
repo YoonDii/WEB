@@ -32,4 +32,28 @@
       </div>
     {% endfor %}
   </div>
+  <div class="container mb-5 text-center">
+    <h2 class="menu-title">인기순(테마별)</h2>
+    <div class="row">
+  
+      {% for admin in all_article %}
+  
+      <div class="col-12 col-sm-6 col-lg-4 my-3">
+        <a href="{% url 'articles:hotplace' admin.pk %}" class="btn btn-light">
+          <div class="card">
+            {% if admin.image %}
+            <img src="{{ admin.image.url }}" class="card-img-top" alt="...">
+          {% else %}
+            <img src="https://dummyimage.com/1200x960/000000/c4c4c4" class="card-img-top">
+          {% endif %}
+            <div class="card-body">
+              <h5 class="card-title fw-bold">{{admin.name}} </h5>
+              <p class="card-text">{{admin.camp_type}}</p>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 {% endblock %}

@@ -8,4 +8,6 @@
     {% bootstrap_form form %}
     <input class="bnt my-3" style='color:#937DC2' type="submit" value="OK">
   </form>
+  <a href="{% url 'accounts:login' %}kakao" class="btn btn-warning">카카오톡으로 로그인</a>
+  <a href="{% url 'accounts:login' %}naver" class="btn btn-success">네이버로 로그인</a>
 {% endblock body %}
